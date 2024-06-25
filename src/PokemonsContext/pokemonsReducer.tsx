@@ -14,8 +14,8 @@ export const initialState: State = {
     types: new Set<string>(),
     search: "",
     sort: {
-      by: '',  // 'weight' or 'height'
-      direction: 'asc'  // 'asc' or 'desc'
+      by: '',
+      direction: 'asc'
     }
     
   },
