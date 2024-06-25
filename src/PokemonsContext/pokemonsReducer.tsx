@@ -14,16 +14,16 @@ export const initialState: State = {
     types: new Set<string>(),
     search: "",
     sort: {
-      by: '',  // 'weight' or 'height'
-      direction: 'asc'  // 'asc' or 'desc'
+      by: 'weight', 
+      direction: 'asc' 
     }
     
   },
-  handleWeightChange: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  handleHeightChange: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  handleSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => {},
-  handleTypeToggle: (type: string) => {},
-  handleSortChange: (sortBy: string, direction: string) => {},
+  handleWeightChange: (_: React.ChangeEvent<HTMLInputElement>) => {},
+  handleHeightChange: (_: React.ChangeEvent<HTMLInputElement>) => {},
+  handleSearchChange: (_: React.ChangeEvent<HTMLInputElement>) => {},
+  handleTypeToggle: (_: string) => {},
+  handleSortChange: (_: string, __: string) => {},
   dispatch: () => {}
 };
 
@@ -38,7 +38,9 @@ export const pokemonsReducer = (state: State, action: any) => {
         ...state,
         pokemons: state.pokemons.map((pokemon) =>
           pokemon.name === action.payload.name ? action.payload : pokemon
+        
         ),
+        
       };
     case "ADD_FAV":
       return {
@@ -96,5 +98,7 @@ export const pokemonsReducer = (state: State, action: any) => {
       throw new Error(
         `No case for type ${action.payload} found in shopReducer.`
       );
+      
   }
+  
 };

@@ -73,7 +73,7 @@ const Sidebar: React.FC<SidebarProps> = ({ uniqueTypeNames, filters }) => {
           {filters.height / 100} mts
         </span>
         <span className="text-sm text-gray-500 dark:text-gray-400 absolute end-0 -bottom-6">
-          Max (600)
+          Max (6) mts
         </span>
       </div>
       <div className="mb-8">
