@@ -15,7 +15,7 @@ export const initialState: State = {
     search: "",
     sort: {
       by: 'weight', 
-      direction: 'asc' 
+      direction: 'asc'
     }
     
   },
