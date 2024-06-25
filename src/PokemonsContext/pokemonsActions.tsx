@@ -67,7 +67,6 @@ export const PokemonsProvider = ({
 
   useEffect(() => {
     if (!executedRef.current) {
-      console.log("se uso");
       getAllPokemons();
       executedRef.current = true;
     }

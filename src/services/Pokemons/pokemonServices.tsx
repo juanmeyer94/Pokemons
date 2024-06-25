@@ -16,7 +16,6 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 export const getPokemonInfo = async (name: string): Promise<Pokemon | null> => {
   try {
     await delay(500);
-    console.log("se utilizó getPokemonInfo")
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const data = response.data;
     const transformedData: Pokemon = {
