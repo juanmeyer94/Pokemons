@@ -31,7 +31,7 @@ export const PokemonsProvider = ({
       dispatch({
         type: "SET_TRUE"
       })
-     }, 1000);
+     }, 2500);
 
       await Promise.all(individualPokemonData);
     } catch (error) {
