@@ -22,7 +22,7 @@ export const LandingPage = () => {
           </div>
           <div className="flex items-center justify-center">
             {!loading ? (
-              <p>Cargando...</p>
+              <p>¡Cargando 1300 pokemons!</p>
             ) : (
               <Link
                 to="/Test"

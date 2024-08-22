@@ -17,7 +17,6 @@ export const initialState: State = {
       by: 'weight', 
       direction: 'asc'
     }
-    
   },
   handleWeightChange: (_: React.ChangeEvent<HTMLInputElement>) => {},
   handleHeightChange: (_: React.ChangeEvent<HTMLInputElement>) => {},
