@@ -24,14 +24,11 @@ export const PokemonsProvider = ({
 
   const getAllPokemons = useCallback(async () => {
     try {
-      console.log("Fetching all pokemons...");
       const data = await getPokemons();
       dispatch({ type: "GET_POKEMONS_SUCCESS", payload: data, loading: false });
-      console.log("Pokemons fetched:", data.length);
       const loadInBatches = async (batchSize: number, delay: number) => {
         for (let i = 0; i < data.length; i += batchSize) {
           const batch = data.slice(i, i + batchSize);
-          console.log(`Loading batch from index ${i} to ${i + batchSize}`);
           await Promise.all(
             batch.map(async (pokemon: { name: string }) => {
               const individualData = await getPokemonInfo(pokemon.name);
@@ -49,7 +46,7 @@ export const PokemonsProvider = ({
         dispatch({ type: "SET_TRUE" });
       };
   
-      loadInBatches(250, 200);
+      loadInBatches(450, 200);
     } catch (error) {
       console.error("Error in getAllPokemons:", error);
       dispatch({ type: "GET_POKEMONS_ERROR", payload: error });
