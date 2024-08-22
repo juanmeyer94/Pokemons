@@ -28,8 +28,6 @@ export const PokemonsProvider = ({
       const data = await getPokemons();
       dispatch({ type: "GET_POKEMONS_SUCCESS", payload: data, loading: false });
       console.log("Pokemons fetched:", data.length);
-      let allLoaded = false;
-  
       const loadInBatches = async (batchSize: number, delay: number) => {
         for (let i = 0; i < data.length; i += batchSize) {
           const batch = data.slice(i, i + batchSize);
@@ -47,9 +45,6 @@ export const PokemonsProvider = ({
           console.log(`Batch from index ${i} to ${i + batchSize} loaded`);
           await new Promise((resolve) => setTimeout(resolve, delay));
         }
-  
-        // Marcar que todos los detalles han sido cargados
-        allLoaded = true;
         console.log("All batches loaded. Dispatching SET_TRUE...");
         dispatch({ type: "SET_TRUE" });
       };
